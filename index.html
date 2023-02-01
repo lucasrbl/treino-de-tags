@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(
+        function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TMGBR6K');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Test</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMGBR6K" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+        <div class="navbar">
+            
+            
+            <div class="logo">
+                <a href=""><img src="images/logo.png" width="125px"></a>
+            </div>
+
+            <nav>
+                <ul class="mt-2 list-none inline-block">
+                    <li class="inline-block mx-5"><a href="">Home</a></li>
+                    <li class="inline-block mx-5"><a href="/category.html">Products</a></li>
+                    <li class="inline-block mx-5"><a href="/form.html">Form</a></li>
+                    <li class="inline-block mx-5"><a href="">About</a></li>
+                    <li class="inline-block mx-5"><a href="">Contact</a></li>
+                    <li class="inline-block mx-5">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    
+        </div>
+
+        <div class="row">
+            <div class="col-2">
+                <h1>Give Your Workout<br> a new style!</h1>
+                <p>Success isn't alaways about greatness. Its about consistency. Consistent<bre> hard work gain success. Greatness will come.</p>
+            </div>
+            <div class="col-2">
+                <img src="images/top banner/image1.png" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <div class=" bg-[url('/images/sliderbg.png')] bg-cover bg-center" x-data="{
+        images: ['images/carrossel/air.png','images/carrossel/blazer.png','images/carrossel/hippie.png','images/carrossel/jordan.png'],
+        activeImg: null,
+        prev(){
+            let index = this.images.indexOf(this.activeImg);
+            if(index === 0){
+                index = this.images.length;
+            }
+                this.activeImg = this.images[index - 1] 
+        },
+        next(){
+            let index = this.images.indexOf(this.activeImg);
+            if(index === this.images.length - 1){
+                index = -1
+            }
+                this.activeImg = this.images[index + 1] 
+        },
+        init() {
+            this.activeImg = this.images.length > 0 ? this.images[0] : null
+        }
+    }">
+            
+        <div class="relative ">
+            <div class="justify-between flex">
+                <a href="#" @click.prevent="prev" class="items-center text-white  pt-1/2 -transalate-x-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </a>
+
+                <template class="" x-for="image in images">
+                    <img x-transition x-show="activeImg === image" :src="image" alt="slideImg">
+                </template>
+                
+
+                <a href="#" @click.prevent="next" class="text-white  right-0 top-1/2 -transalate-x-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                
+            </div>
+            <a href="#">
+                <button class="absolute top-3/4 font-black text-white right-24 bg-black p-2.5 rounded-md">BUY NOW!</button>
+            </a>
+            
+        </div>
+    </div>
+    <div class="flex flex-wrap gap-2">
+        <div class="md:basis-[30%] basis-full bg-[url('images/categories/shoes.jpg')] bg-cover bg-center flex flex-1 h-80">
+            <div class="m-auto bg-black rounded-lg p-2 text-4xl text-white uppercase">
+                Shoes
+            </div>
+        </div>
+        <div class="md:basis-[30%] basis-full bg-[url('images/categories/hats.jpg')] bg-cover bg-center flex flex-1 h-80">
+            <div class="m-auto bg-black rounded-lg p-2 text-4xl text-white uppercase">
+                Hats
+            </div>
+        </div>
+        <div class="md:basis-[30%] basis-full bg-[url('images/categories/tshirts.jpg')] bg-cover bg-center flex flex-1 h-80">
+            <div class="m-auto bg-black rounded-lg p-2 text-4xl text-white uppercase">
+                T-shirts
+            </div>
+        </div>
+        <div class="basis-full bg-[url('images/categories/tshirts.jpg')] bg-cover bg-center flex flex-1 h-80">
+            <div class="m-auto bg-black rounded-lg p-2 text-4xl text-white uppercase">
+                T-shirts
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center">
+        <div class="bg-gray text-gray-700 w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden">
+            <img 
+                class="w-full h-full object-cover"
+                src="./images/product-1.jpg" 
+                alt=""
+            >
+
+            <div class="p-5 flex flex-col gap-3">   
+                <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-full text-xs bg-gray-100">stock ready</span>
+                    <span class="px-3 py-1 rounded-full text-xs bg-gray-100">official store</span>
+                </div>
+
+                <h2 class="font-semibold text-2xl overflow-ellipsis overflow-hidden whitespace-nowrap" title="Best Shirt Ever">
+                    Best Shirt Ever
+                </h2>
+
+                <div>
+                    <span class="text-xl font-bold">
+                        Rp. 400.00
+                    </span>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="text-sm line-through opacity-50">
+                            Rp. 500.00
+                        </span>
+                        <span class="bg-green-500 px-1.5 py-0.5 rounded-md text-xs text-white">
+                            save 20%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mt-5 flex gap-2">
+
+                    <button class="bg-yellow-500/80 hover:bg-yellow-500/90 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+                        Add to Cart
+                    </button>
+                    <button>
+                        <img src="" alt="">
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
